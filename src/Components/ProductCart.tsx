@@ -1,4 +1,4 @@
-import React from 'react'
+import s from "../Styles/Components/ProductCart.module.css";
 
 interface ProductCartProps {
     title: string;
@@ -8,10 +8,9 @@ interface ProductCartProps {
 
 const ProductCart = ({ title, description, image }:ProductCartProps ) => {
   return (
-    <div>
-        <img src={image} alt='Cart image' />
-        <p>{title}</p>
-        <p>{description}</p>
+    <div className={s.cartBox}>
+        <img className={s.productImage} src={image} alt='Cart image' />
+        <p className={s.title}>{title}</p>
     </div>
   )
 }

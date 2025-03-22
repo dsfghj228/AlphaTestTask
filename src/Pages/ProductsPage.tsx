@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addProducts } from '../Redux/ProductsSlice'
 import { ProductsState } from '../interfaces'
 import ProductCart from '../Components/ProductCart'
+import s from "../Styles/Pages/ProductsPage.module.css";
 
 type Props = {}
 
@@ -26,7 +27,7 @@ const ProductsPage = (props: Props) => {
    })
 
   return (
-    <div>
+    <div className={s.cartContainer}>
       {carts}
     </div>
   )
