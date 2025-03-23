@@ -9,4 +9,5 @@ export interface ProductsState {
       rate: number;
       count: number;
     }
+    isFavorite: boolean;
   }
