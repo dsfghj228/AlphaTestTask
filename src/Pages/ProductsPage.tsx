@@ -11,6 +11,7 @@ type Props = {}
 const ProductsPage = (props: Props) => {
   const dispatch = useDispatch();
   const [ products, setProducts ] = useState<ProductsState[]>([]);
+  const [ isFavFilter, setIsFavFilter ] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,16 +21,24 @@ const ProductsPage = (props: Props) => {
     };
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
    const carts = products.map(c => {
     return <ProductCart title={c.title} description={c.description} image={c.image} />
    })
 
   return (
-    <div className={s.cartContainer}>
-      {carts}
-    </div>
+    <>
+      <div className={s.btn_box}>
+          <button onClick={() => setIsFavFilter(false)}
+                  className={!isFavFilter ? s.active_btn : s.inactive_btn}>Все</button>
+          <button onClick={() => setIsFavFilter(true)}
+                  className={isFavFilter ? s.active_btn : s.inactive_btn}>Избранное</button>
+      </div>
+      <div className={s.cartContainer}>
+        {carts}
+      </div>
+    </>
   )
 }
 

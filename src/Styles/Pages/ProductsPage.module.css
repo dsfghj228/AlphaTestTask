@@ -9,3 +9,25 @@
     ". . . . ."
     ". . . . ."; 
 }
+
+.btn_box {
+    width: 300px;
+    display: flex;
+    margin: auto;
+    margin-bottom: 50px;
+    justify-content: space-around;
+}
+
+.active_btn, .inactive_btn {
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.active_btn {
+    background-color: rgb(89, 89, 206);
+    color: white;
+}
