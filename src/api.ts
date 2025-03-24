@@ -11,3 +11,14 @@ export const getProducts = async (page: number) => {
       return null;
     }
   };
+
+export const deleteProduct = async (id: number) => {
+  try {
+    const response = await axios.delete(`${API}/${id}`);
+    console.log(response.data);
+    return response.data;
+  }catch(err) {
+    console.log(err);
+    return null;
+  }
+}

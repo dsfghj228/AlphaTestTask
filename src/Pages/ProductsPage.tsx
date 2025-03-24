@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { getProducts } from '../api'
+import { deleteProduct, getProducts } from '../api'
 import { useDispatch, useSelector } from 'react-redux'
-import { addProducts, resetState } from '../Redux/ProductsSlice'
+import { addProducts, removeProduct, resetState } from '../Redux/ProductsSlice'
 import { ProductsState } from '../interfaces'
 import ProductCart from '../Components/ProductCart'
 import s from "../Styles/Pages/ProductsPage.module.css";
@@ -36,14 +36,22 @@ const ProductsPage = (props: Props) => {
   
     fetchData();
   }, [dispatch]);
-
   const filteredProducts = isFavFilter
     ? productsList.filter(product => product.isFavorite)
     : productsList;
 
+    const handleDelete = (id: number) => {
+      const fetchData = async () => {
+        await deleteProduct(id);
+        dispatch(removeProduct(id));
+      }
+  
+      fetchData();
+    }
+
 
    const carts = filteredProducts.map(c => {
-    return <ProductCart id={c.id} title={c.title} image={c.image} isFavorite={c.isFavorite}/>
+    return <ProductCart id={c.id} title={c.title} image={c.image} isFavorite={c.isFavorite} handleDelete={handleDelete}/>
    })
 
   return (
