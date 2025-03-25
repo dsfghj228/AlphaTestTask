@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AlphaTestTask/static/css/main.06bd385a.css",
+    "main.js": "/AlphaTestTask/static/js/main.e35bb1c4.js",
+    "static/js/453.71f7f6b7.chunk.js": "/AlphaTestTask/static/js/453.71f7f6b7.chunk.js",
+    "index.html": "/AlphaTestTask/index.html",
+    "main.06bd385a.css.map": "/AlphaTestTask/static/css/main.06bd385a.css.map",
+    "main.e35bb1c4.js.map": "/AlphaTestTask/static/js/main.e35bb1c4.js.map",
+    "453.71f7f6b7.chunk.js.map": "/AlphaTestTask/static/js/453.71f7f6b7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06bd385a.css",
+    "static/js/main.e35bb1c4.js"
+  ]
+}
