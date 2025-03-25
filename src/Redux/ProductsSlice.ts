@@ -30,5 +30,8 @@ export const productsSlice = createSlice({
 
 export const { addProducts, resetState, toggleFavorite, removeProduct, createProduct} = productsSlice.actions;
 
+export const getProductById = (id: number) => (state: { products: ProductsState[] }) => {
+  return state.products.find(product => product.id === id);
+};
 
 export default productsSlice.reducer

@@ -34,7 +34,7 @@ const ProductCart = React.memo(({ id, title, image, isFavorite, handleDelete}: P
           className={s.like_btn}
           onClick={(e) => handleLike(e)}
         >
-          {isFavorite ? <FaHeart /> : <FaRegHeart />}
+          {isFavorite ? "❤" : "♡" }
         </button>
       </div>
       <p className={s.title}>{title}</p>

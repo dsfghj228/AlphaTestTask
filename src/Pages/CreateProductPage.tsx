@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { createProduct } from '../Redux/ProductsSlice';
+import s from "../Styles/Pages/CreateProductPage.module.css";
 
 type Props = {}
 
@@ -36,38 +37,38 @@ const CreateProductPage = (props: Props) => {
     }
 
   return (
-    <div>
+    <div className={s.createCart_box}>
         <Link to={"/products"}>Обратно к списку товаров</Link>
-        <h1>Создание карточки продукта:</h1>
-        <div>
+        <h1 className={s.article}>Создание карточки продукта:</h1>
+        <div className={s.wrapp}>
             <h3>Введите название товара</h3>
             <input type='text'
                     placeholder='Название товара'
                     value={title}
                     onChange={(e) => setTitle(e.target.value)} />
         </div>
-        <div>
+        <div className={s.wrapp}>
             <h3>Введите описание товара</h3>
             <input type='text'
                     placeholder='Описание товара'
                     value={description}
                     onChange={(e) => setDescription(e.target.value)} />
         </div>
-        <div>
+        <div className={s.wrapp}>
             <h3>Введите категория товара</h3>
             <input type='text'
                     placeholder='Категория товара'
                     value={category}
                     onChange={(e) => setCategory(e.target.value)} />
         </div>
-        <div>
+        <div className={s.wrapp}>
             <h3>Введите ссылку на изображение товара</h3>
             <input type='text'
                     placeholder='Изображение товара'
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)} />
         </div>
-        <div>
+        <div className={s.wrapp}>
             <h3>Введите цену товара</h3>
             <input type='number'
                     placeholder='0'
@@ -81,7 +82,7 @@ const CreateProductPage = (props: Props) => {
                         }
                     }} />
         </div>
-        <button onClick={() => createProductCart()}>Создать карточку</button>
+        <button className={s.post_btn} onClick={() => createProductCart()}>Создать карточку</button>
     </div>
   )
 }

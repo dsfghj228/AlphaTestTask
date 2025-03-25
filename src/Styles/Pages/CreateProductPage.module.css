@@ -1,0 +1,72 @@
+.createCart_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .article {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .wrapp {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .wrapp h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .wrapp input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+  
+  .wrapp input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .post_btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .post_btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .post_btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }

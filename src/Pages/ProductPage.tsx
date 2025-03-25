@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ProductsState } from '../interfaces';
-import { getProductById } from '../api';
 import s from "../Styles/Pages/ProductPage.module.css";
+import { useSelector } from 'react-redux';
+import { getProductById } from '../Redux/ProductsSlice';
 
 
 const ProductPage = () => {
     const { id } = useParams();
     const [ isLoading, setIsLoading ] = useState<boolean>(false);
     const [ product, setProduct ] = useState<ProductsState | null>();
+    const data = useSelector(getProductById(Number(id)));
 
     useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            const data = await getProductById(Number(id));
-            setProduct(data);
-            setIsLoading(false)
+        setIsLoading(true);
+        if (data) {
+        setProduct(data);
         }
-
-        fetchData();
-    }, [])
+        setIsLoading(false);
+    }, [data]);
 
   return (
     <div className={s.container}>
