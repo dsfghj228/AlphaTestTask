@@ -5,9 +5,10 @@ export interface ProductsState {
     category: string;
     image: string;
     price: number;
-    rating: {
-      rate: number;
-      count: number;
-    }
     isFavorite: boolean;
+  }
+
+  export interface ProductsSliceState {
+    products: ProductsState[];
+    productsLen: number;
   }

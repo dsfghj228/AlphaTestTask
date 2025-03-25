@@ -31,7 +31,6 @@ const ProductsPage = (props: Props) => {
         category: p.category,
         image: p.image,
         price: p.price,
-        rating: p.rating,
         isFavorite: false,
       }));
 

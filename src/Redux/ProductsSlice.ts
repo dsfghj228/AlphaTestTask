@@ -13,18 +13,22 @@ export const productsSlice = createSlice({
     resetState: (state) => {
       state = []
     },
-    toggleFavorite(state, action) {
+    toggleFavorite: (state, action) => {
       const product = state.find(product => product.id === action.payload);
       if (product) {
         product.isFavorite = !product.isFavorite;
       }
     },
-    removeProduct(state, action) {
+    removeProduct: (state, action) => {
       return state.filter(product => product.id !== action.payload);
     },
+    createProduct: (state, action) => {
+      state.push(action.payload);
+    }
   },
 })
 
-export const { addProducts, resetState, toggleFavorite, removeProduct} = productsSlice.actions
+export const { addProducts, resetState, toggleFavorite, removeProduct, createProduct} = productsSlice.actions;
+
 
 export default productsSlice.reducer
