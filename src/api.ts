@@ -15,10 +15,19 @@ export const getProducts = async (page: number) => {
 export const deleteProduct = async (id: number) => {
   try {
     const response = await axios.delete(`${API}/${id}`);
-    console.log(response.data);
     return response.data;
   }catch(err) {
     console.log(err);
     return null;
+  }
+}
+
+export const getProductById = async (id: number) => {
+  try {
+    const response = await axios.get(`${API}/${id}`);
+    return response.data;
+  }catch(err) {
+    console.log(err);
+    return null
   }
 }
